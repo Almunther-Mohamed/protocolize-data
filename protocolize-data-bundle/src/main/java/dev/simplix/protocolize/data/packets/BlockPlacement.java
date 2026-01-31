@@ -118,7 +118,7 @@ public class BlockPlacement extends AbstractPacket {
                     hand = Hand.MAIN_HAND;
                     sb.append("\n    Hand: ").append(hand.name());
                     stack = ItemStackSerializer.read(buf, protocolVersion);
-                    sb.append("\n    Item: ").append(stack.itemType().name());
+                    sb.append("\n    Item: ").append(stack != null && stack.itemType()!=null ? stack.itemType().name() : "empty handed");
                     hitVecX = buf.readByte() / 15F;
                     sb.append("\n    Hit Vec X: ").append(this.hitVecX);
                     hitVecY = buf.readByte() / 15F;
